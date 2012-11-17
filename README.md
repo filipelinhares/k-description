@@ -15,8 +15,8 @@
 <hr>
 #Dependências
 <ul>
-<li>[jQuery 1.7.0](http://www.jquery.com)</li>
-<li>[jQuery Easing<i>Opcional</i>](http://gsgd.co.uk/sandbox/jquery/easing/).</li>
+<li>jQuery 1.8.3 http://www.jquery.com</li>
+<li>jQuery Easing [<i>Opcional</i>] http://gsgd.co.uk/sandbox/jquery/easing</li>
 </ul>
 <hr>
 #Como Usar
