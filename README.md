@@ -1,3 +1,6 @@
+#[Projeto antigo, estarei refazendo.]
+  
+    
 #Descrição
 
 É um simples plugin jQuery para criação de descrições em imagens
