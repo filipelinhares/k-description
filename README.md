@@ -1,13 +1,10 @@
-#[Projeto antigo, estarei refazendo.]
-  
-    
-#Descrição
+#k-description Plugin jQuery
 
-É um simples plugin jQuery para criação de descrições em imagens
+A simple plugin for descriptions.
 
-###[Exemplos](http://filipelinhares.github.com/examples/exemplodescrisao/)
+###[Examples](http://filipelinhares.github.com/k-description)
 ---
-#Compatibilidade de Navegadores
+#Browser Support
 
 - Internet Explorer 6+
 - Mozilla Firefox 3.6+
@@ -16,76 +13,162 @@
 - Opera 10.10+
 
 ---
-#Dependências
+#Dependencies
 
-- jQuery 1.8.3 http://www.jquery.com
-- Query Easing [*Opcional*] http://gsgd.co.uk/sandbox/jquery/easing
+- [jQuery](http://www.jquery.com)
+- [jQuery Easing](http://gsgd.co.uk/sandbox/jquery/easing) *optional*
+
+---
+##How to use
+###`$('selector').description({your-options});`
+---
+#Your options
+###-  kheight
+The height of your description
+-	Default value: 100px.
+
+***Caution. Set height equal your parent element height.***
+
+Syntax:
+
+```
+   $('selector').description({
+		kheight : 'value'
+    });
+```
+---
+###-  kwidth
+Define a width for your description
+
+-	Default value: 100%.
+
+Syntax:
+```
+	$('selector').description({
+		kwidth: 'value'
+    });
+```
+---
+###-  kmarginTop
+
+Margin top of your description to your parent element.
+
+-	Default value: 50px.
+
+Syntax:
+```
+	$('selector').description({
+    	kmarginTop : 'valorEmPx'
+    });
+```
+---
+###-  kduration
+
+Duration of the animation.
+
+-	Default value: 1000 ms;
+
+Syntax:
+```
+	$('selector').description({
+		duracaoDescricao : 'value-ms'
+    });
+```
+---
+###-  kin
+Initial direction of your description.
+
+Acc values: up - down
+
+-	Default value down.
+
+Syntax:
+
+```
+	$('selector').description({
+		kin : 'up-or-down'
+	});
+```
+---
+###-  kout
+
+End direction of your description.
+
+Acc values: up - down
+
+-	Defautl value: down.
+
+Syntax:
+```
+	$('selector').description({
+		kout : 'up-or-down'
+    });
+```
+---
+###-  kopacity - ***(Check browser support in [Can i use Opacity](http://caniuse.com/css-opacity))***
+
+Opacity of your description.
+
+-	Acc values: 0.1 - 1.
+
+-	Default Value 1.
+
+Syntax:
+```
+	$('selector').description({
+		 kopacity	 : 'value'
+     });
+```
+---
+###-  kcontent
+
+-	The text of your description.
+
+-	Default value: 'k-description jQuery'.
+
+Syntax:
+```
+	$('selector').description({
+    	 kcontent : 'value'
+     });
+```
+---
+###-  kease
+
+-	Default value: ''
+
+Syntax:
+```
+	$('selector').description({
+		easingDescricao : 'value'
+    });
+```
 
 ---
 
-##Como Usar
-Para utilizar basta você baixar os arquivos, e colocar no *head*, após isso em um elemento em bloco utilize o seletor jQuery *$()* e então utilize o plugin *descricao* com as suas preferências assim:
+#Style
+###Window Description
+For this a class called `kp` as add in `p` element.
 
-`
-$('seletorjQuery').descricao({<i>preferencias</i>});`
----
-#Preferências
-###-heightDescricao
-Defini o tamanho da janela da descrição.
--Valor Padrão 100px.
-ATENÇÃO ACONCELHAMOS COLOCAR DO MESMO TAMANHO DO ELEMENTO PAI
-sintaxe:
+e.g:
 
-`$('seletorjQuery').descricao({<i>'heightDescricao' : 'valorEmPx'</i>});`
-###-widthDescricao
-Defini a largura da janela de descrição.
--Valor Padrão 100%.
+```
+.kp{
+	background: #3f4353;
+}
+```
 
-`$('seletorjQuery').descricao({"widthDescricao': 'valorEmPx'*});`
+###The text
+Equal a window, just add style to `.kcontent`.
 
-###-marginTopDescricao
-É a distancia que a descrição vai ficar do topo, em relação ao seu elemento pai assim que a animação estiver "pronta".
--Valor Padrão 50px.
+e.g:
 
-`$('seletorjQuery').descricao({<i>'marginTopDescricao' : 'valorEmPx'</i>});`
-###-duracaoDescricao
-O tempo que ira demora a animação da descrição
--Valor Padrão 1000;
-
-`$('seletorjQuery').descricao({'duracaoDescricao' : 'valorEmMilisegundo'});`
-###-direcaoEntrada
-A direção de onde ira surgir a descrição.
--Valor Padrão up  //sem aspas.
-
-`$('seletorjQuery').descricao({<i>'direcaoEntrada' : up ou down</i>});`
-###-direcaoSaida
-A direção para onde vai a descrição.
--Valor Padrão down  //sem aspas.
-
-`$('seletorjQuery').descricao({'direcaoSaida' : up dowm});`
-###-opacidadeDescricao
-Opacidade da descrição.
--Valor Padrao 1. //sem aspas(Os valores vão de 0 a 1 podendo passar por 0.50, 0.40 etc.)
-
-`$('seletorjQuery').descricao({'opacidadeDescricao' : 'valorEmPx'});`
-###-textoDescricao
-É o texto que vai dentro da descrição.
-Valor Padrao = 'Plugin Descrição em jQuery - Criado por Filipe Linhares'
-
-`$('seletorjQuery').descricao({'textoDescricao : 'textoAqui'});`
-###-easingDescricao
-Valor Padrao
-
-`$('seletorjQuery').descricao({'easingDescricao : 'valorAqui'});`
+ ```
+ .kcontent{
+ 	color: #fff;
+    font-weight: bold;
+ }
+ ```
 
 ---
-#Estilização
-###Janela da Descrição
-Para estilizar a janela da descrição basta criar um estilo CSS para o seguinte elemento:
-*p.descricao*
-###Texto da Descrição
-Para estilizar o texto basta criar um estilo css para o seguinte elemento:
-*span.textoDescricao*
----
-####Autor: Filipe Linhares
-[Twitter](http://twitter.com/ofilipelinhares)
+Author: Filipe Linhares
