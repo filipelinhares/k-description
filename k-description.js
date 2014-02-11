@@ -62,8 +62,8 @@
             .stop()
             .animate({
                 width: settings.kwidth
-              , height: settings.kheight,
-                marginTop: settings.kmarginTop
+              , height: settings.kheight
+              , marginTop: settings.kmarginTop
             }, settings.kduration, settings.kease);
         },
 
