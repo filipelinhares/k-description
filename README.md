@@ -140,7 +140,7 @@ Syntax:
 Syntax:
 ```
 	$('selector').description({
-		easingDescricao : 'value'
+		kease : 'value'
     });
 ```
 
