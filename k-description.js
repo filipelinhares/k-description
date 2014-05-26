@@ -1,12 +1,13 @@
 /*
  * Name: k-description - Plugin jQuery.
  * home: https://github.com/filipelinhares/k-description
- * version: 1.0.1
+ * version: 1.0.2
  * author: Filipe Linhares
  */
 
-(function($) {
+;(function($) {
   $.fn.description = function(options) {
+    'use strict';
 
     //Define defaults values
     var defaults = {
@@ -40,19 +41,23 @@
         .text(settings.kcontent);
 
       //Manipule down and up value to kin
-      if (settings.kin == 'down') 
+      if (settings.kin == 'down')
         settings.kin = '+';
-        else if (settings.kin == 'up') 
+        else if (settings.kin == 'up')
         settings.kin = '-';
 
+      //Set a function to be called when animation end
+      var resetAnimation = function () {
+      
       //Style kp with user options
-      $("p.kp").css({
-          display: "block"
-        , width: settings.kwidth
-        , height: settings.kheight
-        , opacity: settings.kopacity
-        , marginTop: settings.kin + settings.kheight
-      });
+        $("p.kp").css({
+            width: settings.kwidth
+          , height: settings.kheight
+          , opacity: settings.kopacity
+          , marginTop: settings.kin + settings.kheight
+        });
+      };
+      resetAnimation();
 
       //Add event mouseover to element, and show description.
       $(this).on({
@@ -82,7 +87,7 @@
             .stop()
             .animate({
               marginTop: settings.kout + settings.kheight
-            }, settings.kduration, settings.kease);
+            }, settings.kduration, settings.kease, resetAnimation);
         }
       });
     });
